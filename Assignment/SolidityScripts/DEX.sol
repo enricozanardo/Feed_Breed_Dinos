@@ -99,9 +99,9 @@ contract DinoBreeder {
 
 contract DinoFeeder is DinoBreeder, DEX {
 
-    uint256 public constant foodPrice = 1; // 1 food for 1 Gwei
-    //uint256 public constant tokenPrice = 1000; // 1 token for 1000 wei
-    uint256 public food = 0; // 1 food for 1 Gwei
+    uint256 public constant foodPrice = 1 wei; // 1 food for 1 wei
+    uint256 public constant tokenPrice = 1 wei; // 1 token for 1 wei
+    uint256 public food = 0; 
     mapping(address => uint256) foodBalances;
 
 
@@ -109,7 +109,7 @@ contract DinoFeeder is DinoBreeder, DEX {
         
         address foodBuyer = payable(msg.sender);
 
-        require(balances[foodBuyer] > _amount, "You don't have enough tokens to buy food!");
+        require(balances[foodBuyer] >= _amount, "You don't have enough tokens to buy food!");
         require(msg.sender != owner, "You cannot buy as the owner!");
         uint256 foodAmountToBuy = _amount;
 
