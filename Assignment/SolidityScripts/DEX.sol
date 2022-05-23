@@ -26,7 +26,7 @@ contract DEX {
     }
 
     modifier isRatio() {
-        require(msg.value > 0, "The ratio between the tokens is 1:1, send more Gwei!");
+        require(msg.value > 0, "The ratio between the tokens is 1:1, send more wei!");
         _;
     }
 
