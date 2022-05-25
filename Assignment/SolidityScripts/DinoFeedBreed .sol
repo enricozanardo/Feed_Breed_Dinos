@@ -16,7 +16,6 @@ contract DinoFeedBreed {
         feedToken = new FeedToken();
         owner = payable(msg.sender);
         balances[owner] = feedToken.totalSupply();
-        
     }
 
 
@@ -92,8 +91,8 @@ contract DinoFeedBreed {
     }
 
 
-    uint256 public constant foodPrice = 0.1 ether; // 1 food for 0.1 ether
-    uint256 public constant tokenPrice = 0.1 ether; // 1 token for 0.1 ether
+    uint256 public constant foodPrice = 1000 wei; // 1 food for 1000 wei
+    uint256 public constant tokenPrice = 1000 wei; // 1 token for 1000 wei
     uint256 private totalCost; //cost of food in feed tokens
     uint256 public food = 0; 
     mapping(address => uint256) foodBalances;
@@ -121,12 +120,12 @@ contract DinoFeedBreed {
         foodBalances[foodBuyer] = food;
     }
 
-
-    function feedAndMultiply(uint _dinoId, uint _targetDna) public {
-      require(msg.sender == dinoToOwner[_dinoId]);
+/// ERROR IN FUNCTION WHEN USING STRING DINO NAME INSTEAD OF UINT DINO_ID////
+    function feedAndMultiply(string memory DinoName, uint _targetDna) public {
+      require(msg.sender == dinoToOwner[DinoName]);
       require(food >=1, "Not enough food!");
     
-      // Dino storage myDinos = dinos[_dinoId];
+      // Dino storage myDinos = dinos[DinoName];
     
       _targetDna = _targetDna % dnaModulus;
     
