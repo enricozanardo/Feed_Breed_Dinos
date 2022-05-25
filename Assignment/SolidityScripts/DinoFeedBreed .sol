@@ -65,14 +65,14 @@ contract DinoFeedBreed {
     
     Dino[] public dinos;
     
-    mapping (uint => address) public dinoToOwner;
+    mapping (string => address) public dinoToOwner;
     mapping (address => uint) ownerDinoCount;
     
     function _createDino(string memory _name, uint _dna) internal {
         dinos.push(Dino(_name, _dna));
         uint256 id = dinos.length;
         
-        dinoToOwner[id] = msg.sender;
+        dinoToOwner[_name] = msg.sender;
         ownerDinoCount[msg.sender]++;
         
         emit NewDino(id, _name, _dna);
