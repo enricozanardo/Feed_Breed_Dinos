@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 import "./FeedToken.sol";
 
-contract DEX {
+contract DinoFeedBreed {
 
     mapping(address => uint256) balances;
 
@@ -53,10 +53,7 @@ contract DEX {
         return balances[tokenOwner];
     }  
 
-}
 
-contract DinoBreeder {
-    
     uint256 dinoDnaDigits = 16;
     uint dnaModulus = 10 ** dinoDnaDigits;
     
@@ -88,19 +85,16 @@ contract DinoBreeder {
     }
     
     function createRandomDino(string memory _name) public {
-        require(ownerDinoCount[msg.sender] == 0);
+        require(ownerDinoCount[msg.sender] == 0, "You already created your first random Dino. Feed your existing dino to multiply!");
         
         uint randDna = _generateRandomDna(_name);
         _createDino(_name, randDna);
     }
 
-    
-}
 
-contract DinoFeeder is DinoBreeder, DEX {
-
-    uint256 public constant foodPrice = 1 wei; // 1 food for 1 wei
-    uint256 public constant tokenPrice = 1 wei; // 1 token for 1 wei
+    uint256 public constant foodPrice = 0.1 ether; // 1 food for 0.1 ether
+    uint256 public constant tokenPrice = 0.1 ether; // 1 token for 0.1 ether
+    uint256 private totalCost; //cost of food in feed tokens
     uint256 public food = 0; 
     mapping(address => uint256) foodBalances;
 
@@ -113,9 +107,10 @@ contract DinoFeeder is DinoBreeder, DEX {
         require(msg.sender != owner, "You cannot buy as the owner!");
         uint256 foodAmountToBuy = _amount;
 
-        
+        totalCost = foodPrice * foodAmountToBuy;
         //Sending money to the owner of contract
-        owner.transfer(foodAmountToBuy);
+        feedToken.transfer(owner, totalCost);
+        //owner.transfer(foodAmountToBuy);
 
         //Send the food to the buyer
         food = food+foodAmountToBuy;
@@ -141,12 +136,6 @@ contract DinoFeeder is DinoBreeder, DEX {
     
       _createDino("Child Dino", newDna);
       food = food -1;
-  }
 
-    
- //HOW TO USE
- // 1) createRandomDino and input a name eg. FirstDino
- // 2) To use 'dinos' function, think in index. FirstDino = index 0.
- // 3) To feed the FirstDino, input dinoId WHICH IS 1 (not 0, not index.) and then, FirstDino's DNA(or any DNA? test further).   
- // 4) To use DinoToOwner function, again, think in ID (1 for FirstDino and 2 for ChildDino (if fed) not in index!).
+    }
 }
