@@ -24,6 +24,11 @@ contract DinoFeedBreed {
         _;
     }
 
+    modifier isNotOwner() {
+        require(msg.sender != owner, "You cannot buy as the owner!");
+        _;
+    }
+
     modifier isRatio() {
         require(msg.value > 0, "The ratio between the tokens is 1:1, send more wei!");
         _;
@@ -83,7 +88,7 @@ contract DinoFeedBreed {
         return rand % dnaModulus;
     }
     
-    function createRandomDino(string memory _name) public {
+    function createRandomDino(string memory _name) isNotOwner public {
         require(ownerDinoCount[msg.sender] == 0, "You already created your first random Dino. Feed your existing dino to multiply!");
         
         uint randDna = _generateRandomDna(_name);
@@ -98,12 +103,12 @@ contract DinoFeedBreed {
     mapping(address => uint256) foodBalances;
 
 
-    function buyFoodWithTokens(uint _amount) external payable {
+    function buyFoodWithTokens(uint _amount) isNotOwner external payable {
         
         address foodBuyer = payable(msg.sender);
 
         require(balances[foodBuyer] >= _amount, "You don't have enough tokens to buy food!");
-        require(msg.sender != owner, "You cannot buy as the owner!");
+        
         uint256 foodAmountToBuy = _amount;
 
         totalCost = foodPrice * foodAmountToBuy;
@@ -121,7 +126,7 @@ contract DinoFeedBreed {
     }
 
 /// ERROR IN FUNCTION WHEN USING STRING DINO NAME INSTEAD OF UINT DINO_ID////
-    function feedAndMultiply(string memory DinoName, uint _targetDna) public {
+    function feedAndMultiply(string memory DinoName, uint _targetDna) isNotOwner public {
       require(msg.sender == dinoToOwner[DinoName]);
       require(food >=1, "Not enough food!");
     
