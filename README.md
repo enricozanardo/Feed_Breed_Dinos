@@ -103,3 +103,5 @@ Javascript functions are not fully implemented and most do not work as intended 
 This is because the ability to change between wallet addresses was not implemented and therefore, on the front-end side it's always
 the owner that is interacting. Hence, the limited features. 
 
+Alerts with Javascript were implemented and are visible on the front end. Create Dino could not be tested fully due to confustion with accounts. HTML implemented  with buttons pointing showcasing the functions and connected to Bukky.js for serverside scripting. Due to limited knowledge in javascript, some functions could not be fully implemented.
+
