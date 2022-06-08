@@ -1,6 +1,6 @@
 # Feed_Breed_Dinos
 
-function buyTokens: send wei to buy tokens. (1000 wei = 1 token)
+function buyTokens: send wei to buy tokens. (1 wei = 1 token)
 
 function buyFoodWithTokens: send FeedTokens to buy food. (1 token = 1 food)
 
