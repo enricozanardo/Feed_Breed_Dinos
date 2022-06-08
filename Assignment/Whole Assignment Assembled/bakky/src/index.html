@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/ico/favicon-16x16.png">
+	<link rel="manifest" href="assets/ico/manifest.json">
+	<link rel="mask-icon" href="assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="assets/ico/favicon.ico">
+	<meta name="msapplication-config" content="assets/ico/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>Welcome to Dino World</title>
+
+	<!-- CSS Plugins -->
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="assets/plugins/lightbox/css/lightbox.min.css">
+	<link rel="stylesheet" href="assets/plugins/flickity/flickity.min.css">
+
+	<!-- CSS Global -->
+	<!-- build:css assets/css/theme.min.css -->
+	<link rel="stylesheet" href="assets/css/theme.css">
+	<!-- endbuild -->
+
+  </head>
+  <body>
+
+
+      <!-- HEADER
+    ================================================== -->
+      <section class="section section_header" data-parallax="scroll" data-image-src="assets/img/36.jpg">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+
+                      <!-- Heading -->
+                      <h1 class="section__heading section_header__heading text-center">
+                          Welcome to Dino World!
+                      </h1>
+
+                  </div>
+              </div> <!-- / .row -->
+          </div> <!-- / .container -->
+      </section>
+
+      <!-- DISCOVER
+    ================================================== -->
+     <!-- <section class="section section_discover"> -->
+          <div class="container">
+
+            <p class="enableEthereumButton mt-5">
+                Connect to MetaMask to start your Journey!
+            </p>
+
+              <div class="row" style="height: 15vh;">
+                  <div class="col-md-6 align-self-start">
+                    <div class="card">
+                       <div class="card-header"><strong>Balance</strong></div>
+                         <div class="card-body">
+                         <span id="FBDBalance"></span> FBD<br/>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-md-6 align-self-start">
+                    <div class="card">
+                      <div class="card-header"><strong>Food Balance</strong></div>
+                          <div class="card-body">
+                          <span id="FoodBalance"></span> Food<br/>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row"style="height: 80vh;">
+                <div id="like_button_container"></div> 
+                  <div class="col-md-4 align-self-start">
+
+                      
+                      <!-- Description -->
+            
+                      <div class="card">
+                        <div class="card-header"><strong>Buy Tokens</strong></div>
+                        <div class="card-body">
+                          <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="tokenAmount" placeholder="Enter amount" />
+                            </div>
+                              <button class="btn btn-light" id="buyTokenDinoButton" type="button">Buy</button>
+                          </form>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <div class="card-header"><strong>Buy Food</strong></div>
+                        <div class="card-body">
+                          <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="foodAmount" placeholder="Enter amount" />
+                            </div>
+                              <button class="btn btn-light" id="buyFoodDinoButton" type="button">Buy</button>
+                          </form>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <div class="card-header"><strong>Create Dino</strong></div>
+                        <div class="card-body">
+                          <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="DinoName" placeholder="Dino Name" />
+                            </div>
+                              <button class="btn btn-light" id="createDinoButton" type="button">Create</button>
+                          </form>
+                        </div>
+                      </div>
+            
+                      <div class="card">
+                        <div class="card-header"><strong>Feed and Breed Dino</strong></div>
+                        <div class="card-body">
+                          <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="DinoName" placeholder="Dino Name" />
+                            </div>
+                              <button class="btn btn-light" id="createFeedBreedDinoButton" type="button">Feed and Breed</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  <div class="col-sm-8">
+                    <div class="data">
+                      <img width=100% height=100% id="Dino" alt="rawr">
+                    </div>
+                  </div> 
+                </div>
+              </div> <!-- / .row -->
+          </div> <!-- / .container -->
+  <!--    </section> -->
+
+   <section style="height: 5vh;"></section>
+
+      <!-- INFO
+    ================================================== -->
+      <section class="section section_info section_info_opposite">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+
+                      <!-- Heading -->
+                      <h2 class="section__heading text-center">
+                          Behind the scenes
+                      </h2>
+
+                      <!-- Subheading -->
+                      <p class="section__subheading text-center">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia obcaecati sit odio velit culpa aspernatur consectetur natus quidem minima veritatis.
+                      </p>
+
+                  </div>
+              </div> <!-- / .row -->
+              <div class="row align-items-justify">
+                  <div class="col-md-6 order-md-3">
+
+                      <div class="section_info__img">
+                          <img src="assets/img/4.jpg" alt="...">
+                      </div>
+
+                  </div>
+                  <div class="col-md-1 order-md-2"></div>
+                  <div class="col-md-5 order-md-1">
+
+                      <div class="section_info__body">
+                          <p class="lead text-heading">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident sequi ratione, accusamus quo mollitia architecto, explicabo obcaecati.
+                          </p>
+                          <p>
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum enim saepe aperiam eius, quam blanditiis necessitatibus dolorem dignissimos pariatur quas velit nihil tempora, libero unde molestiae! Illum, inventore. Iusto, autem!
+                          </p>
+                          <br>
+                          <p>
+                             
+                          </p>
+                      </div>
+
+                  </div>
+              </div> <!-- / .row -->
+          </div> <!-- / .container -->
+      </section>
+
+     
+      <!-- FOOTER
+    ================================================== -->
+      <footer class="section section_footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-4">
+
+                      <!-- About Us -->
+                      <h5 class="section_footer__heading">
+                          About The Dino Team
+                      </h5>
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.
+                      </p>
+
+                  </div>
+                  <div class="col-sm-4">
+
+                      <!-- Contact info -->
+                      <h5 class="section_footer__heading">
+                          Contact Us!
+                      </h5>
+                      <ul class="section_footer__info">
+                          <li>
+                              <i class="fas fa-map-marker-alt"></i> 1234 Altschul, Malta, MLT 1023
+                          </li>
+                          <li>
+                              <i class="fas fa-phone"></i> +356 21929348
+                          </li>
+                          <li>
+                              <i class="far fa-envelope"></i> <a href="mailto:admin@mcast.com">admin@domain.com</a>
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div class="col-sm-4">
+
+                      <!-- Opening hours -->
+                      <h5 class="section_footer__heading">
+                          Customer Service Operating Hours
+                      </h5>
+                      <div class="section_footer__open">
+                          <div class="section_footer__open__days">Monday - Thursday</div>
+                          <div class="section_footer__open__time">10:00 AM - 11:00 PM</div>
+                      </div>
+                      <div class="section_footer__open">
+                          <div class="section_footer__open__days">Friday - Sunday</div>
+                          <div class="section_footer__open__time">12:00 AM - 03:00 AM</div>
+                      </div>
+
+                  </div>
+              </div> <!-- / .row -->
+              
+          </div> <!-- / .container -->
+      </footer>
+
+      <!-- JAVASCRIPT
+    ================================================== -->
+      <!-- JS Global -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnKt8_N4-FKOnhI_pSaDL7g_g-XI1-R9E"></script>
+
+      <!-- JS Plugins -->
+      <script src="assets/plugins/parallax/parallax.min.js"></script>
+      <script src="assets/plugins/isotope/lib/imagesloaded.pkgd.min.js"></script>
+      <script src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
+      <script src="assets/plugins/flickity/flickity.pkgd.min.js"></script>
+      <script src="assets/plugins/lightbox/js/lightbox.min.js"></script>
+      <script src="assets/plugins/reservation/reservation.js"></script>
+      <!-- <script src="assets/plugins/alerts/alerts.js"></script> -->
+
+      <!-- JS Custom -->
+      <!-- build:js assets/js/theme.min.js -->
+      <script src="assets/js/theme.js"></script>
+      <!-- endbuild -->
+      <script src="assets/js/custom.js"></script>
+            
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+        
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/bakky.js"></script>
+
+  </body>
+</html>
