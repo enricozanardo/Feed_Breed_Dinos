@@ -79,4 +79,27 @@ PASS
 ## tokenPrice Test:
 Returns the cost of Tokens in Wei.
 
+## COMPILE & DEPLOYMENT USING GANACHE-CLI AND RINKEBY 
+truffle.js is responsible for compiling all smart contracts and for deployment on either Ganache-cli or Rinkeby test network.
+
+To compile and deploy run the following commands in the terminal:
+  ## FOR GANACHE-CLI
+  "ganache-cli -d" - on cmd to launch local blockchain
+  "truffle compile" - to compile smart contracts
+  "truffle deploy" - to deploy on ganache-cli
+
+  ## FOR RINKEBY
+  "truffle compile" - to compile smart contracts
+  "truffle deploy --network rinkeby" - to deploy on rinkeby test network
+
+  ## TO RUN MAIN SCRIPT
+  "npm run dev"
+
+## FRONTEND 
+
+Web3 initialises Metamask login prompt automatically upon the first run.
+
+Javascript functions are not fully implemented and most do not work as intended due to isNotOwner constraint from DinoFeedBreed.sol
+This is because the ability to change between wallet addresses was not implemented and therefore, on the front-end side it's always
+the owner that is interacting. Hence, the limited features. 
 
