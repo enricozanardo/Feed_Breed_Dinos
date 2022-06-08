@@ -73,6 +73,10 @@ contract DinoFeedBreed {
     mapping (string => address) public dinoToOwner;
     mapping (address => uint) ownerDinoCount;
     
+//using the memory keyword to store the string in the memory instead of the storage.
+//using storage costs money because it stores the data on the chain.
+//Storing in memory is cost effective, when appropriate to use memory.
+
     function _createDino(string memory _name, uint _dna) internal {
         dinos.push(Dino(_name, _dna));
         uint256 id = dinos.length;
