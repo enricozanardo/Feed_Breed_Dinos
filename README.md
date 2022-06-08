@@ -79,4 +79,6 @@ PASS
 ## tokenPrice Test:
 Returns the cost of Tokens in Wei.
 
+Test
+
 
